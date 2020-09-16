@@ -22,7 +22,7 @@ interface INotePros {
     id: string;
     title: string;
     description: string;
-  }
+  };
 }
 
 const Item: React.FC<INotePros> = ({ children, note }) => {
@@ -32,7 +32,7 @@ const Item: React.FC<INotePros> = ({ children, note }) => {
 
   return (
     <motion.li layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
-      <motion.div  layout>
+      <motion.div layout>
         <h3>{children}</h3>
       </motion.div>
       <AnimatePresence>{isOpen && <Content note={note} />}</AnimatePresence>
@@ -40,7 +40,7 @@ const Item: React.FC<INotePros> = ({ children, note }) => {
   );
 };
 
-const Content: React.FC<INotePros>  = ({ note }) => {
+const Content: React.FC<INotePros> = ({ note }) => {
   return (
     <motion.div
       layout
@@ -48,7 +48,7 @@ const Content: React.FC<INotePros>  = ({ note }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div >{note.description}</div>
+      <div>{note.description}</div>
     </motion.div>
   );
 };
